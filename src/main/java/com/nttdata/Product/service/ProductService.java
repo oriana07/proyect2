@@ -4,9 +4,9 @@ import com.nttdata.Product.model.Product;
 
 public interface ProductService {
 
-    List<Product> getAll();
+    Product getProductById(Integer id);
 
-    Product getById(Integer id);
+    List<Product> getProductAll();
 
     void save(Product product);
 
@@ -14,6 +14,6 @@ public interface ProductService {
 
     void updateBalance(Product product);
 
-    List<Product> getProductIdClient(Integer id);
+
 
 }

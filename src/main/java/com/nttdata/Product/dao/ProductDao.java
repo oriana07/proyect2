@@ -7,5 +7,5 @@ import java.util.List;
 
 public interface ProductDao extends CrudRepository<Product, Integer> {
 
-    List<Product> findProductByIdClient(Integer idClient);
+    List<Product> findProduct(Integer id);
 }

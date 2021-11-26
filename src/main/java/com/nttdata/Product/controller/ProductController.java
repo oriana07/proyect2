@@ -1,5 +1,6 @@
 package com.nttdata.Product.controller;
 
+import com.nttdata.Product.dao.ProductDao;
 import com.nttdata.Product.model.Product;
 import com.nttdata.Product.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,35 +12,34 @@ import java.util.List;
 public class ProductController {
 
     @Autowired
-    private ProductService productService;
+    ProductService productService;
+
+    @Autowired
+    ProductDao productDao;
 
     @GetMapping("/product")
-    public List<Product> getAll(){
-        return productService.getAll();
+    public List<Product> getProductAll(){
+        return productService.getProductAll();
     }
 
     @GetMapping("/product/{id}")
-    public Product getById(PathVariable Integer id){
-        return productService.getById(id);
+    public Product getProductById(@PathVariable Integer id){
+        return productService.getProductById(id);
     }
 
     @PostMapping("/product")
     public void save(Product product){
-        productService.save(product);
+        productDao.save(product);
     }
 
     @DeleteMapping("/product/{id}")
-    public void delete(PathVariable Integer id){
-        productService.deleteById(id);
+    public void delete(@PathVariable Integer id){
+        productDao.deleteById(id);
     }
 
     @PutMapping("/product")
     public void update(@RequestBody Product product){
-        productService.save(product);
+        productDao.save(product);
     }
 
-    @GetMapping("/product/client/{id}")
-    public List<Product> getProductByIdClient(@PathVariable Integer id){
-        return productService.getProductIdClient(id);
-    }
 }

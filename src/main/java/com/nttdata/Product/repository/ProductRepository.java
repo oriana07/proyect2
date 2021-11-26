@@ -1,7 +1,6 @@
 package com.nttdata.Product.repository;
 
 import com.nttdata.Product.model.Product;
-import com.nttdata.Product.model.ProductType;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -17,24 +16,4 @@ public class ProductRepository {
         return product.stream();
     }
 
-
-    public Product getById(Integer id) {
-
-    }
-
-    public void deleteById(Integer id) {
-
-    }
-
-    public List<Object> findById(Integer id) {
-
-    }
-
-    public List<Product> findAll() {
-
-    }
-
-    public void save(Product productDB) {
-
-    }
 }
